@@ -72,7 +72,12 @@ a bunch of idle frequencies and jumping between them.
 • Greater shielding/noise protection; greater diameter=less resistance=longer  
 runs; but lots of materials (=expensive) and very stiff (=hard to deploy)  
  
--  
+
+
+
+## TCP  
+TCP: Transmission Control Protocol  
+
  
  
  
