@@ -76,9 +76,35 @@ runs; but lots of materials (=expensive) and very stiff (=hard to deploy)
 
 
 ## TCP  
-TCP: Transmission Control Protocol  
+### TCP: Transmission Control Protocol  
+Three-handshake(三次握手)：
+- client A sends SYN to client B.  
+- client B sends SYN+ACK back to client A.  
+- client A sends another ACK back to client B.  
 
- 
+### UTP
+- 无连接，两个进程通信前没有握手过程  
+- 传输速度快  
+- 没有拥塞控制机制  
+
+
+### telnet command  
+Telnet allows the user to test individual ports and see whether they are open or not.  
+example： telnet rpc.acronis.com 443  
+
+
+## DNS  
+[An impressive video for DNS!!!](https://www.youtube.com/watch?v=vrxwXXytEuI)   
+Defination: DNS is the system that translates **human-readable domain names(google.com)** TO **IP addresses(172.217.27.142)**.  
+Steps:  
+- **client** inputs website like google.com and send a request to **recursive resolver**.  
+- If this IP<->website is not cached in recursive resolver, **recursive resolver** requests to **root name servers**.  
+- If **root name servers** is still not cached, it will send this info to **recursive resolver**.  
+- This **recursive resolver** will respond to **TLD(top-level domain) nameservers** (.ee,.com, .edu, etc.).  
+- **recursive resolver** will respond to **authoritative nameservers**.  
+- Finally, cache this IP<->website to web brower so that you can further use it.  
+
+
  
  
  
