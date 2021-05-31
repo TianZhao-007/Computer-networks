@@ -76,13 +76,17 @@ runs; but lots of materials (=expensive) and very stiff (=hard to deploy)
 
 
 ## TCP  
+[Comparsion TCP VS. UDP, look at this video](https://www.youtube.com/watch?v=Vdc8TCESIg8)  
+[Use wireshark to see 3-way handshake](https://www.youtube.com/watch?v=HCHFX5O1IaQ)  
+[TCP解释--面试用](https://blog.csdn.net/hyg0811/article/details/102366854?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162246961816780269863540%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162246961816780269863540&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-102366854.pc_search_result_control_group&utm_term=%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B&spm=1018.2226.3001.4187)  
+
 ### TCP: Transmission Control Protocol  
 Three-handshake(三次握手)：
 - client A sends SYN to client B.  
 - client B sends SYN+ACK back to client A.  
 - client A sends another ACK back to client B.  
 
-### UTP
+### UDP: User Datagram Protocol  
 - 无连接，两个进程通信前没有握手过程  
 - 传输速度快  
 - 没有拥塞控制机制  
