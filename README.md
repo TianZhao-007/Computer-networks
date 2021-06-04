@@ -96,10 +96,28 @@ Three-handshake(三次握手)：
 Telnet allows the user to test individual ports and see whether they are open or not.  
 example： telnet rpc.acronis.com 443  
 
+### ARP(address resolution protocol)  
+IP <-> MAC address  
+[Click here to learn: the principle and wireshark presetation](https://www.youtube.com/watch?v=tXzKjtMHgWI)  
 
-## DNS  
+
+## Applications,DNS,DHCP  
+
+### Applications  
+examples: SSH,Telnet,Email, Web...  
+Designs: client/server, P2P(peer_to_peer),Publication/subscribtion  
+
+### DNS
 [An impressive video for DNS!!!](https://www.youtube.com/watch?v=vrxwXXytEuI)   
 Defination: DNS is the system that translates **human-readable domain names(google.com)** TO **IP addresses(172.217.27.142)**.  
+
+DNS namespace:  
+Go from root(.) then gTLD or ccTLD  
+Examples: ./com/google, ./au/edu/au  
+DNS root servers: [CLICK here to see DNS root servers](https://www.iana.org/domains/root/servers)  
+
+
+
 Steps:  
 - **client** inputs website like google.com and send a request to **recursive resolver**.  
 - If this IP<->website is not cached in recursive resolver, **recursive resolver** requests to **root name servers**.  
@@ -108,9 +126,31 @@ Steps:
 - **recursive resolver** will respond to **authoritative nameservers**.  
 - Finally, cache this IP<->website to web brower so that you can further use it.  
 
+### DHCP  
+DHCP: Dynamic host configuration protocol  
+Goal: lease IP automatically rather than mannually.
+Steps: **DORA**-> discover, offer, request, ACK  
+
 
  
- 
+## WWW, HTTP  
+
+
+
+
+## Realtime communications  
+
+## loT, MQTT  
+
+## Routing  
+
+## Congestion  
+
+## Measurement,SNMP  
+
+## Security  
+
+
  
  
  
