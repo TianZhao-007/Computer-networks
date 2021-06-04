@@ -134,16 +134,29 @@ Steps: **DORA**-> discover, offer, request, ACK
 
  
 ## WWW, HTTP  
+Applications chose transport protocol(TCP,UDP).  
+### HTTP  
 
 
 
 
-## Realtime communications  
+## Realtime communications(realtime transport protocol)  
+
+### RTP  
+- RTP provide end-to-end delivery services for delay-sensitive data(e.g. voice and video).  
+- Send messages, hope they arrive, weak client/server relationship.  
+- A UDP application. RTP picks a random even UDP port ranging from 16384 to 32767.  
+
+### RTCP(realtime transport control protocol)
+
 
 ## loT, MQTT  
 
 ## Routing  
 
+### Dijkstra algorithm  
+[Blog for quick acknowledgement](https://blog.csdn.net/wei242425445/article/details/93330427?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162279076016780265441229%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162279076016780265441229&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-93330427.pc_search_result_control_group&utm_term=dijkstra%E7%AE%97%E6%B3%95&spm=1018.2226.3001.4187)  
+[online solver for dijkstra](https://mdahshan.github.io/dijkstra/)  
 ## Congestion  
 
 ## Measurement,SNMP  
