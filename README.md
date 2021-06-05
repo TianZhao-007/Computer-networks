@@ -1,4 +1,6 @@
-# Computer-networks
+# Computer-networks  
+REFERENCE BOOK: computer networks: a top-down approach  
+[Link for the lab and exploration in this book](https://github.com/moranzcw/Computer-Networking-A-Top-Down-Approach-NOTES)  
 
 ## Signal and simple informatics  
 
