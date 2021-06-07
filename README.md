@@ -156,9 +156,49 @@ Applications chose transport protocol(TCP,UDP).
 
 ## Routing  
 
+### forwarding vs. routing  
+Local decisions vs global decisions
+Packet Forwarding(转发) and Routing(路由)  
+Forwarding table = Next hop(跳) for every destination.  
+
+Routing algorithm determines end-to-end path through network.  
+Forwarding table determines local forwarding at this router.  
+
+### Global routing is hard, why?  
+- Routing size is growing to 1M+  
+- updates are growing(170k/day)  
+- computing forwarding tables are growing  
+- Routers: used to be small computer  
+
+### What we expect routing to be?  
+- Correctness: It has to get packets from A to B.  
+- Efficiency: Use available bandwidth and CPU/energy well.  
+- Fairness: Don’t ignore capable network elements.  
+- Convergence: Recover quickly from any disturbances.  
+- Scalability: Copes with increasingly large and complex networks.  
+
+[常用路由算法](https://blog.csdn.net/qq_40392804/article/details/108864132?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162307443516780261976349%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162307443516780261976349&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-3-108864132.pc_search_result_control_group&utm_term=Distance+Vector+routing&spm=1018.2226.3001.4187)  
 ### Dijkstra algorithm  
 [Blog for quick acknowledgement](https://blog.csdn.net/wei242425445/article/details/93330427?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162279076016780265441229%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162279076016780265441229&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-93330427.pc_search_result_control_group&utm_term=dijkstra%E7%AE%97%E6%B3%95&spm=1018.2226.3001.4187)  
 [online solver for dijkstra](https://mdahshan.github.io/dijkstra/)  
+
+### Distance vector routing(距离矢量路由算法)  
+AKA, Distributed Bellman-Ford Algorithm  
+
+Steps:  
+**Each node stores a vector of distances, and next hops, to all destinations**
+- Initially vector has 0 cost to self, infinity to all others  
+- Send vector to neighbours  
+- Update for each destination with lowest cost heard, adding cost of link  
+- Repeat  
+
+Simple to use, but slow to converge, and somewhat fragile – still improving  
+Problem: **Count to infinity**; When a particular piece of the network falls off  
+
+### Link state routing  
+More computation, but better behaviours  
+
+
 ## Congestion  
 
 ## Measurement,SNMP  
