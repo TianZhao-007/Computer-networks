@@ -198,12 +198,57 @@ Problem: **Count to infinity**; When a particular piece of the network falls off
 ### Link state routing  
 More computation, but better behaviours  
 
+### Link state routing  
+
+### Equal-cost multipath routing (ECMP)  
+Allow for multiple paths for packets between source and destination  
+
+### Hierarchical routing  
+
+### Policy-based routing
+
+### Border Gateway Protocol (BGP)  
+Aggregates nodes within an ‘Autonomous System’ (AS)(自治系统)  
+Identifies Border Routers (or Gateways), which run BGP  
+Separation of interior routing protocols and exterior routing protocols  
+
+BGP发言者（BGP Speaker）：发送BGP消息的路由器称为BGP发言者，它接收或者产生新的路由信息，并发布给其他BGP发言者。  
+BGP对等体（BGP Peer）：相互交换消息的BGP发言者之间互称对等体（Peer）。  
+IBGP对等体（Internal BGP Peer）：如果BGP对等体处于同一自治系统内，被称为IBGP对等体。  
+EBGP对等体（External BGP Peer）：BGP对等体处于不同自治系统时，被称为EBGP对等体。  
+
 
 ## Congestion  
 
+### ARQ(Automatic Repeat-reQuest)  
+- stop-and-wait ARQ  
+Drawbacks of stop-and-wait ARQ  
+1. one frame at a time;   
+2. poor utilization of bandwidth;  
+3. poor performance  
+
+- Go Back N(回退N重传)  
+
+- Selective Repeat(选择重传)  
+
+### TCP sliding window(滑动窗口)  
+
+- Sliding window protocol
+Send multiply frames at a time.  
+Number of frames to be sent is based on Window Size.  
+Each frame is numbered, called sequence number.  
+
+
 ## Measurement,SNMP  
+SNMP(Simple Network Management Protocol)  
+
 
 ## Security  
+
+### DoS(Denial of Service)  
+- Ping of Death
+- SYN flood  
+- 
 
 
  
