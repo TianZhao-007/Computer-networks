@@ -100,25 +100,37 @@ example： telnet rpc.acronis.com 443
 
 ### ARP(address resolution protocol)  
 IP <-> MAC address  
+– translate between layer 3 (IP) and layer 2 (MAC)  
 [Click here to learn: the principle and wireshark presetation](https://www.youtube.com/watch?v=tXzKjtMHgWI)  
 
 
 ## Applications,DNS,DHCP  
 
-### Applications  
+### Applications(Session, presentation, application)  
+- sessions:a series of interactions  
+E.g. a web page with multiple resources, multiple sources  
+A videoconference between particular endpoints  
+A set of associated packet flows  
+
+- Presentation  
+Deal with command and control between two endpoint  
+Manage: Content-packaging,Content-types,Content-encodings,Content-selection  
+
+
+- presentation  
 examples: SSH,Telnet,Email, Web...  
 Designs: client/server, P2P(peer_to_peer),Publication/subscribtion  
 
 ### DNS
 [An impressive video for DNS!!!](https://www.youtube.com/watch?v=vrxwXXytEuI)   
 Defination: DNS is the system that translates **human-readable domain names(google.com)** TO **IP addresses(172.217.27.142)**.  
+DNS message(a 16-bit ID): Simple, lightweight, UDP, port 53  
+
 
 DNS namespace:  
 Go from root(.) then gTLD or ccTLD  
 Examples: ./com/google, ./au/edu/au  
 DNS root servers: [CLICK here to see DNS root servers](https://www.iana.org/domains/root/servers)  
-
-
 
 Steps:  
 - **client** inputs website like google.com and send a request to **recursive resolver**.  
@@ -128,28 +140,116 @@ Steps:
 - **recursive resolver** will respond to **authoritative nameservers**.  
 - Finally, cache this IP<->website to web brower so that you can further use it.  
 
+
+### Domains vs. Zone  
+Domains are what gets delegated - through legal entities – start from ICANN  
+– AU Registrar (auda.org.au) administers second-level-domains in .au
+– Education Services Australia administers domains in .edu.au
+– ANU administers domains (and hosts) in .anu.edu.au
+– Colleges can have sub-domains, etc.
+
+Zones are shared pieces of the DNS database – through technology  
+– Each zone identifies an authoritative nameserver
+– Each zone records delegations and their nameservers
+
+
 ### DHCP  
 DHCP: Dynamic host configuration protocol  
-Goal: lease IP automatically rather than mannually.
-Steps: **DORA**-> discover, offer, request, ACK  
+Design: Client/server application  
+UDP, client port:68, server port:67  
+
+Goal: lease IP automatically rather than mannually.  
+Steps: **DORA**
+- discover(“Who can lease me an IP?”)  
+- offer(“I can. How about 150.203.57.99?”)  
+- request(“Can I have150.203.57.99?”)  
+- ACK(“Yes, You can have150.203.57.99”)  
 
 
  
 ## WWW, HTTP  
 Applications chose transport protocol(TCP,UDP).  
-### HTTP  
 
+### Resources  
+URI includes URN,URL...  
+Uniform Resource Identifiers(URI)  
+Uniform Resource Locator(URL)  
+Uniform Resource Name(URN)  
 
+URL: 
+```
+**http://user:password@host:port [/path] [?Query] [#fragment]**  
+- Protocol: http://  
+- host: www.anu.edu.au  
+- port: 80  
+- /path: to find the resource  
+- [?query] prarmeters to query  
+- [#fragment]  goes to a point within that resource,will not be send together with request  
+```
 
+### HTTP(Hyper test transfer protocol)  
+```
+Steps to HTTP happiness:  
+1. Parse URL  
+2. Resolve DNS  
+3. Connect to host(IP.addr):port via TCP  
+4. Make HTTP request  
+5. Receive content  
+6. Close TCP connections  
+7. Unpack content  
+8. Render  
+```
+```
+- Request/response, text based, start with the method  
+  Method: E.g. GET <PATH> HTTP/1.0  
+- Server returns headers and a body  
+
+- Http requests:  
+Start with 3-digit HTTP code  
+  HTTP/1.0 302 Found  
+  HTTP/1.0 400 Bad Request  
+  
+Headers:
+  Provide information about the resource  
+```
 
 ## Realtime communications(realtime transport protocol)  
 
-### RTP  
+### RTP(realtime transport protocol)  
 - RTP provide end-to-end delivery services for delay-sensitive data(e.g. voice and video).  
 - Send messages, hope they arrive, weak client/server relationship.  
 - A UDP application. RTP picks a random even UDP port ranging from 16384 to 32767.  
 
-### RTCP(realtime transport control protocol)
+Big buffer:  
+Fewer packets lost to delays = More tolerant of jitter/PDV  
+Greater delay between transmission and playout  
+
+Small buffer:  
+Smaller delay between transmission and playout  
+More packets may be lost to delays = Less tolerant of jitter/PDV  
+```
+How to fix some data is lost?  
+**Retransmission**  
+You know something is lost  
+Request a resend of the problem packet  
+Takes round-trip-time plus processing time plus queuing delay again  
+
+**Elastic(灵活的) buffers**  
+
+**Error-correction**  
+
+**Parallel-transmission**  
+
+```
+
+### RTCP(realtime transport control protocol)  
+- Bidirectional, out-of-band signalling (even port: RTP, odd port: RTCP)  
+- Sender Reports, Receiver Reports  
+- Source Description, Hello/Goodbye  
+
+### Session Initiation Protocol (SIP)  
+Widely used for Voice-over-IP (VoIP) = Internet Telephony  
+
 
 
 ## loT, MQTT  
