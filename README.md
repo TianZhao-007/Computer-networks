@@ -338,12 +338,43 @@ Send multiply frames at a time.
 Number of frames to be sent is based on Window Size.  
 Each frame is numbered, called sequence number.  
 
+### Flow control and congestion control  
+
+
 
 ## Measurement,SNMP  
+[Clik here to learn SNMP-CSDN BLOG](https://blog.csdn.net/qq_41804366/article/details/104541781?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162320429916780265476478%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162320429916780265476478&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-3-104541781.pc_search_result_control_group&utm_term=SNMP&spm=1018.2226.3001.4187)  
 SNMP(Simple Network Management Protocol)  
+- For managing/monitoring network resources  
+- Components:  
+SNMP agents,SNMP managers,Management information bases (MIBs),SNMP protocol itself  
+
+- MIB  
+- OID  
+Tree hierarchy(like DNS)  
+
+- ASN.1  
 
 
 ## Security  
+
+### Threats  
+Eavesdropping，Intrusion，Impersonation，Extortion  
+
+### Encryption(加密)  
+Symmetric (shared key)  
+
+Asymmetric (public/private key)  
+E.g. RSA
+
+### SSL(Secure Socket Layer)  
+
+### Firewalls  
+
+### VPN(Virtual Private Network)  
+Use IP Security (IPsec) to establish secure VPN connections  
+Tunnel mode: router to router  
+Transport mode: host to host  
 
 ### DoS(Denial of Service)  
 - Ping of Death
