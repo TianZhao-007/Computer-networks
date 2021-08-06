@@ -44,6 +44,11 @@ Mancherster:用电压变化来分辨0、1；高->低 是0； 低->高 是1；
 - 优点： 提供一种同步机制，保证接收端和发射端信号同步。  
 - 缺点： 编码频率高，带宽大一倍（和NRZ相比）  
 
+PCI-e encoding  
+PCIe(v1.0 v2.0) 8/10 encoding  
+PCIe(v3.0) 128/130 encoding  
+
+
 ### baseband/passband/broadband
 [click here to lean](https://youtu.be/Ph9N0XGmi-E)  
 
@@ -381,7 +386,27 @@ Transport mode: host to host
 ### DoS(Denial of Service)  
 - Ping of Death
 - SYN flood  
-- 
+
+
+### PCIe(Peripheral Component Interconnect Express)  
+
+#### PCIe分层结构  
+事务层（Translation layer）  
+- 创建/解析TLP(translation layer packet)  
+- 流量控制  
+- QoS
+- 事务排序  
+
+数据链路层（Data link layer）  
+- 创建/解析DLLP(data link layer packet)
+- Ack/Nak协议（链路层检错/纠错）  
+- 流控，电源管理  
+
+物理层（Physical layer）  
+- 对packet数据进行物理传输  
+- 发送端发到lane上进行传输（stripe）  
+- 接收端把各个lane的数据汇总（de-stripe）  
+
 
 
  
